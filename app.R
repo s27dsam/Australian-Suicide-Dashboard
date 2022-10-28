@@ -135,22 +135,30 @@ ui <- fluidPage(
              tabPanel("More Infomation", fluid = TRUE, icon = icon("info-circle"),
                       titlePanel("Data Sources and Data Checking"), br(),
                       mainPanel("----------------------------------------------------------DATA SETS--------------------------------------------------------------"),
-                      mainPanel("The first datasets used for this dashboard comes from the World Health Organisation. More specifaclly the  
-                                                             Mortality Database from 1979-2015 
-                                                             that has been compiled to include 
-                                                             each countries suicide statistics 
-                                                             that includes sex, age, population 
-                                                             in that year and the number of suicides that took place."),br(),
-                      mainPanel("As for repersenting the Economic growth portion of the issue the data used comes from a well respected orginisation named The Maddison Project which provides a database of 
-                                information on economic growth and income levels 
-                                over long periods of time. This dataset in particulr is the 2020 version that holds 
-                                169 countries up to the 2018 year."),
-                      
-                      mainPanel("---------------------------------------------------DATA CHECKING----------------------------------------------------------"), br(""), 
-                      mainPanel("•	Data type check: Which envolves ensuring that the data provided is correctly identified as the correct data type in the dataset. e.g., Character types that should be numeric."),
-mainPanel("•	Removed irrelevant data from the dataset: From the World Health Organisation data set, data was removed that was not from Australia."), br(),
-mainPanel("•	Handle missing data: As allthe Australian 2005 suicide data was missing it was removed form the dataset. "),
-mainPanel("•	Consistency check: The final check was to understand if there is any inconsistency with how the data is presented. 
+                      mainPanel("The first datasets used for this dashboard comes from the World Health Organisation. 
+                      More specifaclly the  
+                      Mortality Database from 1979-2015 
+                      that has been compiled to include 
+                      each countries suicide statistics 
+                      that includes sex, age, population 
+                      in that year and the number of suicides that took place."),br(),
+                      mainPanel("As for repersenting the Economic growth portion 
+                      of the issue the data used comes from a well respected 
+                      orginisation named The Maddison Project which provides a database of 
+                      information on economic growth and income levels 
+                      over long periods of time. This dataset in particulr is the 2020 version that holds 
+                      169 countries up to the 2018 year."), mainPanel(br()), 
+                      mainPanel("---------------------------------------------------DATA CHECKING----------------------------------------------------------"), 
+                      mainPanel("•	Data type check: Which envolves ensuring that 
+                                the data provided is correctly identified as 
+                                the correct data type in the dataset. e.g., 
+                                Character types that should be numeric."),
+mainPanel("•	Removed irrelevant data from the dataset: From the World Health 
+          Organisation data set, data was removed that was not from Australia."), br(),
+mainPanel("•	Handle missing data: As allthe Australian 2005 suicide data was 
+          missing it was removed form the dataset. "),
+mainPanel("•	Consistency check: The final check was to understand if there is 
+any inconsistency with how the data is presented. 
 Through using this checklist above, it showed that there were missing values in 
 the World Health Organisation dataset. After removing the irrelevant data leaving 
 only the Australian data left. The dataset displayed NA values for all the suicide 
@@ -159,7 +167,7 @@ suicide data is fundamental for the statistical analysis portion of the explorat
 it would be most appropriate to remove all the 2005 data pertaining to Australian suicide. 
 The tool used for this action was the generic na.omit function which returns the object 
 with the incomplete cases removed from it."),
-mainPanel("======================================================================")),
+mainPanel(br())),
              
              tabPanel("References", fluid = TRUE, icon = icon("globe-americas"),
                       titlePanel("References"), mainPanel(
@@ -185,7 +193,10 @@ mainPanel("=====================================================================
 
 .com"), br(),br(), mainPanel("• Australian Institute of Health and Welfare. (2021). Deaths by suicide over time. Australian Institute of Health and Welfare. https://www.aihw.gov.au/suicide-self-harm-monitoring/data/deaths-by-suicide-in-australia/suicide-deaths-over-time
 
-"),)
+"), mainPanel(br()), 
+                      img(src="https://files.northernbeaches.nsw.gov.au/sites/default/files/styles/gi--main-thumbnail/public/images/general-information/suicide-prevention/suicide-prevention-webtile.jpg?itok=A1OcvTS1"
+        
+        , height=300, width=800)),
   )
 )
              
@@ -305,6 +316,15 @@ server <- function(input, output, session) {
              
              
 shinyApp(ui = ui, server = server)
+             
+             
+             
+                      
+            
+                      
+                      
+                      
+                      
              
              
              
